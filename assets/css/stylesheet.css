@@ -39,7 +39,7 @@ body {
 }
 
 .green {
-    color: #d0f224;
+    color: #FFEB3B;
 }
 
 .blue {
@@ -62,7 +62,7 @@ body {
     padding: 14px 32px;
     font-weight: 700;
     border-radius: 3px;
-    background-color: #d0f224;
+    background-color: #FFEB3B;
     display: inline-block;
     cursor: pointer;
 }
@@ -73,7 +73,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #b5d60d;
+    background-color: #fbe72f;
 }
 
 .btn-blue:hover {
@@ -107,7 +107,7 @@ a {
     color: #fff;
     justify-content: space-between;
     align-items: center;
-    background-color: #15141b;
+    background-color: #091d62;
     padding: 20px 0;
     position: fixed;
     width: 100%;
@@ -272,10 +272,11 @@ a {
 /*---------------Banner start---------------*/
 
 .banner {
-    background-color: #000;
-    background-image: url("../img/background.svg");
+    background-color: #1238bf;
+    /* background-image: url("../img/background.svg"); */
     background-repeat: no-repeat;
     background-position: right;
+    height: 760px;
 }
 
 h1 {
