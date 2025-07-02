@@ -107,7 +107,7 @@ a {
     color: #fff;
     justify-content: space-between;
     align-items: center;
-    background-color: #091d62;
+    background-color: #1238bf;
     padding: 20px 0;
     position: fixed;
     width: 100%;
@@ -276,7 +276,10 @@ a {
     /* background-image: url("../img/background.svg"); */
     background-repeat: no-repeat;
     background-position: right;
-    height: 760px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1 {
