@@ -25,13 +25,6 @@
     max-width: 385px;
   }
 
-  .video {
-    top: 0;
-    width: 475px;
-    height: 265px;
-    right: 53px;
-  }
-
   .laptop-video::after {
     height: 605px;
     width: 600px;
@@ -192,8 +185,13 @@
     display: block;
   }
 
+  .video-banner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
   .video-wrapper {
-    display: none;
+    width: 100%;
   }
 
   .banner {
@@ -201,7 +199,8 @@
   }
 
   .banner-head {
-    min-width: 650px;
+    max-width: 650px;
+    width: 100%;
   }
 
   .bg-h2 h2,
@@ -398,7 +397,7 @@
   }
 
   .container {
-    padding: 0 15px;
+    padding: 0 20px;
   }
 
   .section {
@@ -411,10 +410,6 @@
 
   .banner-title {
     width: 100%;
-  }
-
-  .banner-head {
-    min-width: 300px;
   }
 
   h1 {
