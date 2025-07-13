@@ -12,42 +12,120 @@
     <link rel="stylesheet" href="assets/css/Resposive.css">
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+        body {
+            background-color: #ffde5c;
+        }
+        .menu-wrapper {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: -69px;
+            transition: top 0.3s ease-in-out;
+        }
+
+        .menu-wrapper:hover {
+            top: 0;
+        }
+
+        .main-content {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+            max-height: 100vh;
+            overflow: auto;
+            transition: padding 0.3s ease-in-out;
+        }
+        .menu-wrapper:hover + .main-content {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px solid #ffde5c;
+            overflow: hidden;
+        }
+
+        .menu-button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          z-index: 100;
+          cursor: pointer;
+        }
+    
+        .hamburger {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 6px;
+          width: 168px;
+          background-color: #ffde5c;
+          height: 28px;
+          border-bottom-left-radius: 22px;
+          border-bottom-right-radius: 22px;
+          box-shadow: 1px 1px 3px rgba(0,0,0,.1);
+        }
+    
+        .hamburger span {
+          display: block;
+          width: 30px;
+          height: 2px;
+          background-color: #000;
+        }
+      </style>
 </head>
 
 <body>
     <!-----------------==================== Header section start ===================----------------->
-    <header class="header">
-        <div class="logo_nav container">
-            <div class="logo ">
-                <a class="main_logo text-xl" href="#">
-                   Sirra Studio
-                </a>
+    
+    
+    <div class="menu-wrapper">
+        <header class="header">
+            <div class="logo_nav container">
+                <div class="logo ">
+                    <a class="main_logo text-xl black" href="#">
+                    Sirra Studio
+                    </a>
+                </div>
+                <nav class="nav">
+                    <ul class="navbar">
+                        <!-- <li class="nav-item"><a class="txt-dec-none white" href="#">About Us</a></li> -->
+                        <!-- <li class="nav-item"><a class="txt-dec-none white" href="#">Our Client</a></li> -->
+                        <!-- <li class="nav-item"><a class="txt-dec-none white" href="#">Pricing</a></li> -->
+                        <li class="nav-item "><a class="txt-dec-none black" href="#footer">Let's talk</a></li>
+                    </ul>
+                </nav>
+                <div class="toggle-icon">
+                    <div class="toggle toggle-first"></div>
+                    <div class="toggle toggle-second"></div>
+                    <div class="toggle toggle-third"></div>
+                </div>
             </div>
-            <nav class="nav">
-                <ul class="navbar">
-                    <!-- <li class="nav-item"><a class="txt-dec-none white" href="#">About Us</a></li> -->
-                    <!-- <li class="nav-item"><a class="txt-dec-none white" href="#">Our Client</a></li> -->
-                    <!-- <li class="nav-item"><a class="txt-dec-none white" href="#">Pricing</a></li> -->
-                    <li class="nav-item "><a class="txt-dec-none green" href="#footer">Let's talk</a></li>
-                </ul>
-            </nav>
-            <div class="toggle-icon">
-                <div class="toggle toggle-first"></div>
-                <div class="toggle toggle-second"></div>
-                <div class="toggle toggle-third"></div>
+        
+        </header>
+        <div class="menu-button">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </header>
+    </div>
     <!-----------------==================== Header sectio end ===================----------------->
+
+    <main class="main-content">
     <!-----------------==================== Banner section start ===================----------------->
     <section class="banner section">
         <div class="container video-banner">
             <div class="section-head banner-head">
                 <div class="banner-title">
-                    <h1 class="white">Tailored Shopify solutions for ambitious ecommerce brands.</h1>
+                    <h1 class="white flex-col flex">
+                        <span>The creation of </span>
+                        <span>Human centered</span>
+                        <span>E-commerce</span>
+                    </h1>
                 </div>
                 <div class="banner-discription white">
-                    <p><span class="line"></span>Launch smarter. Scale faster. Sell better.</p>
+                    <p><span class="line"></span>Designed, Developed and Delivered.</p>
                 </div>
                 <a href="#footer" class="btn">Book a Free Strategy Call</a>
             </div>
@@ -570,7 +648,7 @@
 
     </footer>
     <!-----------------==================== Footer section end ===================----------------->
-
+    </main>
 </body>
 
 </html>
