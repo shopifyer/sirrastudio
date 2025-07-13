@@ -299,11 +299,6 @@ h1 {
     width: 100%;
 }
 
-.banner-head,
-.video-wrapper {
-    width: 40%;
-}
-
 .banner-info,
 .banner-discription {
     font-size: 18px;
@@ -320,23 +315,14 @@ h1 {
 .video-banner {
     display: flex;
     width: 100%;
-    align-items: center;
-}
-
-.video-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-}
-
-.video {
-    position: relative;
-    z-index: 3;
-    border: solid 8px #000;
-    width: 100%;
-    border-radius: 8px;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-top: 180px;
+    padding-left: 150px;
 }
 
 /*---------------Banner end---------------*/

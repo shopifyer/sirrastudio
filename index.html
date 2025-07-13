@@ -22,6 +22,7 @@
             right: 0;
             top: -69px;
             transition: top 0.3s ease-in-out;
+            z-index: 999;
         }
 
         .menu-wrapper:hover {
@@ -114,14 +115,17 @@
 
     <main class="main-content">
     <!-----------------==================== Banner section start ===================----------------->
-    <section class="banner section">
+    <section class="banner section relative">
+        <div class="banner-media">
+            <img src="/assets/img/sirraStudioBanner.png" alt="Sirra Studio Banner" width="100%">
+        </div>
         <div class="container video-banner">
             <div class="section-head banner-head">
                 <div class="banner-title">
                     <h1 class="white flex-col flex">
                         <span>The creation of </span>
-                        <span>Human centered</span>
-                        <span>E-commerce</span>
+                        <span>Human centered E-commerce</span>
+                        <span></span>
                     </h1>
                 </div>
                 <div class="banner-discription white">
@@ -129,7 +133,7 @@
                 </div>
                 <a href="#footer" class="btn">Book a Free Strategy Call</a>
             </div>
-            <div class="section-body video-wrapper">
+            <!-- <div class="section-body video-wrapper">
                 <div class="laptop-video">
                     <video class="video"
                         poster="https://cdn.shopify.com/shopifycloud/plus_website/assets/pages/enterprise-ecommerce/video-placeholder-large-2cf5d4d42a8ff90f33dfa88940b7914d544b173d3f4d276c1dae0429bd032fe4.jpg"
@@ -140,7 +144,7 @@
                         src="https://cdn.shopify.com/shopifycloud/plus_website/assets/pages/enterprise-ecommerce/hero-video-e342a887bfe45e0128bdf37affc18c31e1c49cb0f2a6fb8de22315c9373b7d2b.mp4"
                         autoplay="true"></video>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-----------------==================== Banner section end ===================----------------->
