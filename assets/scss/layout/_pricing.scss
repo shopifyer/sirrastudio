@@ -1,0 +1,166 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Pricing CSS
+----------------------------------------*/
+.pricing__tab{
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+.pricing__tab .nav-tabs {
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: 1px solid #E1E1E1;
+    padding: 5px 20px;
+    border-radius: 100px;
+    position: relative;
+    column-gap: 10px;
+}
+
+.pricing__tab .nav .nav-item .nav-link {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: var(--ag-color-heading-primary);
+    text-transform: capitalize;
+    outline: none;
+    font-size: 14px;
+    border: none;
+    padding: 8px 20px;
+    &:before{
+        background: var(--ag-color-heading-primary);
+        content: "";
+        width: 105px;
+        height: 34px;
+        position: absolute;
+        top: 7px;
+        left: 15px;
+        border-radius: 100px;
+        z-index: -1;
+        visibility: hidden;
+        opacity: 0;
+        @include transition (all 0.3s ease-in-out);
+    }
+}
+.pricing__tab .nav .nav-item .nav-link:focus {
+    outline: none;
+}
+
+.pricing__tab .nav .nav-item .nav-link.active {
+    color: var(--ag-color-common-white);
+    border: none;
+    &:before{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+.pricing__tab .nav .nav-item{
+    &:nth-child(2){
+        .nav-link.active{
+            &:before{
+                transform: translateX(100px);
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.pricing-wrap{
+    align-items: center;
+    justify-content: center;
+    &>div{
+        padding: 0;
+        @include breakpoint(sm){
+            padding: 0 15px;
+        }
+    }
+}
+
+.pricing-item{
+    background-color: #FAFAFA;
+    padding: 60px 40px;
+    .plan{
+        font-family: var(--ag-ff-heading);
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--ag-color-theme-primary);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        display: block;
+    }
+    .price{
+        font-size: 64px;
+        font-weight: 500;
+        line-height: 1;
+        padding-bottom: 25px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #E1E1E1; 
+        span{
+            color: var(--ag-color-text-body);
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+    .pricing-list{
+        list-style: none;
+        margin-bottom: 40px;
+        li{
+            font-family: var(--ag-ff-body);
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--ag-color-heading-primary);
+            @include flex-vertical-center;
+            column-gap: 15px;
+            &:not(:last-of-type){
+                margin-bottom: 15px;
+            }
+            i{
+                color: var(--ag-color-text-body);
+            }
+        }
+    }
+    .pricing-btn{
+        .ag-primary-btn-2{
+            width: 100%;
+            justify-content: center;
+            border: 1px solid var(--ag-color-heading-primary);
+            .btn-text-1{
+                &:after{
+                    background-color: var(--ag-color-theme-primary);
+                }
+            }
+        }
+    }
+    &.active{
+        background-color: var(--ag-color-common-white);
+        border: 1px solid var(--ag-color-theme-primary);
+        .pricing-btn{
+            .ag-primary-btn-2{
+                background-color: var(--ag-color-theme-primary);
+                border: 1px solid var(--ag-color-theme-primary);
+                .btn-text-1{
+                    color: var(--ag-color-common-white);
+                    &:after{
+                        background-color: var(--ag-color-common-white);
+                    }
+                }
+                &:hover{
+                    border: 1px solid var(--ag-color-heading-primary);
+                }
+            }
+        }
+    }
+}
+
+
+
+/* !END: Pricing CSS */

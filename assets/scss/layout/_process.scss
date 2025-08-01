@@ -1,0 +1,86 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Process CSS
+----------------------------------------*/
+
+.process-section{
+    background-color: var(--ag-color-heading-primary);
+    overflow: hidden;
+}
+
+.process-wrapper{
+    min-height: 400px;
+    position: relative;
+}
+
+.process-left-content{
+    @include breakpoint(sm){
+        display: none;
+    }
+    .section-heading{
+        .section-title{
+            br{
+                display: block;
+            }
+        }
+    }
+}
+
+.process-desc-swiper-wrap{
+    height: 3000px;
+    max-width: 750px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    @include breakpoint(xl){
+        max-width: 600px;
+    }
+    overflow: hidden;
+    @include breakpoint(md){
+        max-width: 400px;
+    }
+    .process-desc-swiper{
+        max-height: 400px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        overflow: visible;
+        @include transition(all 0.3s ease-in-out);
+        .swiper-slide{
+            &:not(.swiper-slide-active){
+                opacity: 0.3;
+            }
+            @include transition(all 0.3s ease-in-out);
+            .swiper-scrollbar{
+                background-color: rgba(255, 255, 255, 0.1);
+                .swiper-scrollbar-drag{
+                    background-color: var(--ag-color-theme-primary);
+                }
+            }
+        }
+    }
+}
+
+.process-item{
+    padding-right: 50px;
+    @include breakpoint(sm){
+        padding-right: 20px;
+        padding-left: 15px;
+    }
+    p{
+        color: var(--ag-color-common-white);
+        font-family: var(--ag-ff-heading);
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 1.4;
+        @include breakpoint(md){
+            font-size: 28px;
+        }
+    }
+}
+
+/* !END: Process CSS */

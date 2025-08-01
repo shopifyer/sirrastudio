@@ -1,0 +1,96 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Journey CSS
+----------------------------------------*/
+
+.journey-section{
+    background-color: #F6F6F6;
+}
+
+.journey-carousel-wrap{
+    position: relative;
+    z-index: 1;
+    width: 3000px;
+    height: 545px;
+    overflow: hidden;
+}
+
+.journey-carousel{
+    max-width: 1090px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: visible;
+    .swiper-slide{
+        &.swiper-slide-active{
+            .journey-item{
+                .journey-top{
+                    .number{
+                        color: var(--ag-color-theme-primary);
+                    }
+                    border-color: #1F1F1F;
+                }
+            }
+        }
+    }
+}
+
+.journey-item{
+    .journey-img{
+        height: 300px;
+        margin-bottom: 40px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            filter: saturate(0);
+        }
+    }
+    .journey-content{
+        .journey-top{
+            @include flex-vertical-center;
+            justify-content: space-between;
+            column-gap: 20px;
+            flex-wrap: wrap;
+            row-gap: 15px;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #DCDCDC;
+            .year{
+                span{
+                    font-family: var(--ag-ff-body);
+                    font-size: 14px;
+                    font-weight: 400;
+                    display: block;
+                    color: var(--ag-color-theme-primary);
+                    margin-bottom: 10px;
+                }
+                font-size: 48px;
+                font-weight: 600;
+                margin-bottom: 0;
+                line-height: 1;
+            }
+            .number{
+                background-color: var(--ag-color-common-white);
+                color: var(--ag-color-heading-primary);
+                height: 50px;
+                width: 50px;    
+                @include flex-center;
+                border-radius: 50%;
+                font-size: 14px;
+                font-weight: 700;   
+                font-family: var(--ag-ff-body);
+            }
+        }
+        p{
+            font-size: 18px;
+        }
+    }
+}
+
+
+
+/* !END: Journey CSS */

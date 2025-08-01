@@ -1,0 +1,448 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: About CSS
+----------------------------------------*/
+
+.about-section{
+    position: relative;
+    z-index: 1;
+    .shape-1{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
+
+.about-top{
+    .about-top-btn{
+        a{
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+            @include flex-center;
+            position: relative;
+            .about-btn-bg{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .about-btn-icon{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+            }
+            .about-btn-text{
+                height: 156px;
+                width: 156px;
+                z-index: 1;   
+                animation-name: spin-2;
+                animation-duration: 15s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+.about-img-wrap{
+    position: relative;
+    z-index: 1;
+    .about-img{
+        height: 480px;
+        max-width: 600px;
+        width: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;    
+            filter: saturate(0);
+        }
+    }
+    .img-shape{
+        position: absolute;
+        bottom: -80px;
+        left: -80px;
+        z-index: -1;
+    }
+}
+
+.about-content-1{
+    max-width: 520px;
+    width: 100%;
+}
+
+
+@keyframes spin-2 {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+
+// About 2
+
+.about-img-wrap-2{
+    max-width: 670px;
+    width: 100%;
+    height: 616px;
+    position: relative;
+    z-index: 1;
+    @include breakpoint(md){
+        margin-bottom: 40px;
+    }
+    .about-img-1{
+        max-width: 300px;
+        width: 100%;
+        height: 360px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(0);
+        }
+    }
+    .about-img-2{
+        max-width: 410px;
+        width: 100%;
+        height: 459px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(0);
+        }
+    }
+    .rocket-box{
+        background-color: var(--ag-color-theme-primary);
+        height: 106px;
+        width: 106px;
+        @include flex-center;
+        border-radius: 50%;
+        position: absolute;
+        left: 37%;
+        top: 100px;
+        z-index: 2;
+    }
+    .line-shape{
+        position: absolute;
+        right: 20%;
+        top: 40px;
+        z-index: 2;
+    }
+    .line-shape-2{
+        position: absolute;
+        left: 45px;
+        bottom: 80px;
+    }
+}
+
+.about-content-2{
+    .section-heading{
+        .section-title{
+            span{
+                color: rgba(35, 35, 35, 0.2);
+            }
+        }
+    }
+    .sub-title{
+        font-family: var(--ag-ff-body);
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    p{
+        margin-bottom: 45px;
+        font-size: 18px;
+        @include breakpoint(sm){
+            font-size: 16px;
+        }
+    }
+    .about-btn-wrap{
+        @include flex-vertical-center;
+        column-gap: 40px;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        .mail-box{
+            color: var(--ag-color-heading-primary);
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+            &:before{
+                background-color: var(--ag-color-heading-primary);
+                content: "";
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                @include transition(all 0.3s ease-in-out);
+            }
+            &:hover{
+                &:before{
+                    width: 0;
+                }
+            }
+        }
+    }
+}
+
+// About 3
+
+.about-wrap-3{
+    padding-bottom: 140px;
+    border-bottom: 1px solid var(--ag-color-heading-primary);
+    @include breakpoint(md){
+        padding-bottom: 70px;
+    }
+    @include breakpoint(sm){
+        padding-bottom: 0;
+        border: none;
+    }
+}
+
+.about-img-wrap-3{
+    max-width: 664px;
+    width: 100%;
+    height: 700px;
+    position: relative;
+    @include breakpoint(md){
+        height: 600px;
+        margin-bottom: 40px;
+    }
+    @include breakpoint(sm){
+        height: 400px;
+        margin-bottom: 40px;
+    }
+    .about-img-1{
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 600px;
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            filter: saturate(0);
+        }
+    }
+    .shape{
+        position: absolute;
+        bottom: -64px;
+        right: 0;
+        z-index: -1;
+    }
+    .about-top-btn{
+        position: absolute;
+        bottom: 77px;
+        left: -100px;
+        z-index: 2;
+        @include breakpoint(xxl){
+            left: -50px;
+        }
+        @include breakpoint(lg){
+            left: -20px;
+        }
+        a{
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+            @include flex-center;
+            position: relative;
+            .about-btn-bg{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+            .about-btn-icon{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+            }
+            .about-btn-text{
+                height: 156px;
+                width: 156px;
+                z-index: 1;   
+                animation-name: spin-2;
+                animation-duration: 15s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+// About 4
+
+.about-img-wrap-4{
+    margin-left: auto;
+    margin-right: 0;
+    max-width: 636px;
+    @include breakpoint(md){
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+    .about-img-1{
+        max-width: 526px;
+        left: auto;
+        right: 0;
+    }
+    .about-top-btn{
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        bottom: auto;
+    }
+    .shape{
+        right: -64px;
+    }
+}
+
+.about-content-4{
+    max-width: 530px;
+    width: 100%;
+    .section-heading{
+        .section-title{
+            letter-spacing: -4px;
+            @include breakpoint(md){
+                letter-spacing: 0;
+            }
+        }
+    }
+    .about-tab{
+        .nav-tabs{
+            border: none;
+            margin-bottom: 30px;
+            @include breakpoint(sm){
+                row-gap: 20px;
+            }
+            .nav-item{
+                &:not(:last-of-type){
+                    margin-right: 30px;
+                }
+                .nav-link{
+                    font-family: var(--ag-ff-heading);
+                    color: var(--ag-color-heading-primary);
+                    font-size: 16px;
+                    font-weight: 500;
+                    padding: 0;
+                    border: none;
+                    border-bottom: 1px solid transparent;
+                    box-shadow: none;
+                    text-transform: uppercase;
+                    &.active{
+                        color: var(--ag-color-theme-primary);
+                        border-color: var(--ag-color-theme-primary);
+                    }
+                }
+            }
+        }
+        .tab-content{
+            .tab-pane{
+                p{
+                    margin-bottom: 40px;
+                }
+                .about-progress{
+                    margin-bottom: 40px;
+                    max-width: 500px;
+                    width: 100%;
+                    .title{
+                        font-size: 16px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                    }
+                    .progress{
+                        height: 4px;
+                        overflow: visible;
+                        border-radius: 0;
+                        .progress-bar{
+                            position: relative;
+                            background-color: var(--ag-color-theme-primary);
+                            overflow: visible;
+                            span{
+                                font-size: 16px;
+                                font-weight: 600;
+                                background-repeat: no-repeat;
+                                color: var(--ag-color-theme-primary);
+                                padding: 10px 10px 20px 10px;
+                                position: absolute;
+                                top: -41px;
+                                right: -11px;
+                            }
+                        }
+                    }
+                }
+                .about-author{
+                    display: grid;
+                    align-items: center;
+                    grid-template-columns: 80px 1fr;
+                    grid-gap: 15px;
+                    .author-img{
+                        height: 80px;
+                        width: 80px;
+                        border-radius: 50%;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 50%;
+                            filter: saturate(0);
+                        }
+                    }
+                    .content{
+                        span{
+                            color: var(--ag-color-theme-primary);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* !END: About CSS */

@@ -1,0 +1,69 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Contact CSS
+----------------------------------------*/
+
+.contact-items{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    @include breakpoint(md){
+        grid-template-columns: 1fr;
+    }
+    .contact-item{
+        .title{
+            font-family: var(--ag-ff-heading);
+            color: var(--ag-color-heading-primary);
+            font-size: 32px;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+            @include breakpoint(lg){
+                font-size: 24px;
+            }
+        }
+        p{
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+        .social-list{
+            margin-bottom: 5px;
+            li{
+                display: inline-flex;
+                font-size: 32px;
+                font-weight: 500;
+                @include breakpoint(lg){
+                    font-size: 24px;
+                }
+                &:not(:last-of-type){
+                    margin-right: 10px;
+                }
+                a{
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-content{
+    padding-left: 80px;
+    @include breakpoint(lg){
+        padding-left: 0;
+    }
+    @include breakpoint(md){
+        margin-top: 50px;
+    }
+}
+
+
+.map-wrapper{
+    iframe{
+        border-radius: 16px;
+    }
+}
+
+/* !END: Theme Contact CSS */

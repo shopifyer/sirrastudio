@@ -1,0 +1,234 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Page Header CSS
+----------------------------------------*/
+
+.award-section{
+    background-color: #F0F1F0;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 430px;
+    overflow: hidden;
+    @include breakpoint(xxl){
+        padding-bottom: 300px;
+    }
+    @include breakpoint(lg){
+        padding-bottom: 200px;
+    }
+    @include breakpoint(sm){
+        padding-bottom: 100px;
+    }
+    .bg-shape{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1;
+        img{
+            width: 100%;
+        }
+    }
+    .section-heading{
+        margin-bottom: 50px;
+        @include breakpoint(md){
+            text-align: center;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.award-item{
+    position: relative;
+    &:not(:last-of-type){
+        border-bottom: 1px solid var(--ag-color-border-1)
+    }
+    .award-item-1{
+        @include flex-vertical-center;
+        justify-content: space-between;
+        column-gap: 20px;
+        flex-wrap: wrap;
+        row-gap: 15px;
+        padding: 30px 0;
+        @include breakpoint(md){
+            flex-direction: column;
+            justify-content: center;
+        }
+        .title{
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 0;
+            @include breakpoint(lg){
+                font-size: 30px;
+            }
+            @include breakpoint(sm){
+                font-size: 20px;
+            }
+        }
+        .award-btn{
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            i{
+                color: rgba(35, 35, 35, 0.3);
+                transform: rotate(-45deg);
+                @include transition(all 0.3s ease-in-out);
+            }
+            &:hover{
+                i{
+                    color: var(--ag-color-theme-primary);
+                    transform: rotate(0deg);
+                }
+            }
+        }
+    }
+    .hover-item{
+        background-color: var(--ag-color-theme-primary);
+        @include flex-vertical-center;
+        justify-content: space-between;
+        column-gap: 20px;
+        flex-wrap: wrap;
+        row-gap: 15px;
+        padding: 30px;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        visibility: hidden;
+        opacity: 0;
+        @include transition(all 0.3s ease-in-out);
+        @include breakpoint(md){
+            flex-direction: column;
+            justify-content: center;
+        }
+        @include breakpoint(sm){
+            padding: 30px 20px;
+        }
+        .title{
+            color: var(--ag-color-common-white);
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 0;
+            @include breakpoint(lg){
+                font-size: 30px;
+            }
+            @include breakpoint(sm){
+                font-size: 20px;
+            }
+        }
+        .award-list{
+            @include flex-vertical-center;
+            list-style: none;
+            @include breakpoint(sm){
+                flex-wrap: wrap;
+                row-gap: 5x;
+                justify-content: center;
+            }
+            li{
+                color: var(--ag-color-common-white);
+                font-size: 16px;
+                font-weight: 500;
+                position: relative;
+                @include breakpoint(sm){
+                    font-size: 12px;
+                }
+                a{
+                    color: var(--ag-color-common-white);
+                }
+                &:not(:last-of-type){
+                    margin-right: 15px;
+                    padding-right: 25px;
+                    @include breakpoint(sm){
+                        margin-right: 0px;
+                    }
+                    &:before{
+                        background-color: rgba(255, 255, 255, 0.2);
+                        content: "";
+                        width: 10px;
+                        height: 2px;
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-50%);
+                        @include breakpoint(sm){
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &:hover{
+        .hover-item{
+            visibility: visible;
+            opacity: 1;
+            bottom: 0;
+        }
+    }
+}
+
+.award-bottom{
+    @include flex-vertical-center;
+    justify-content: space-between;
+    column-gap: 30px;
+    margin-top: 120px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--ag-color-theme-primary);
+    flex-wrap: wrap;
+    row-gap: 20px;
+    @include breakpoint(lg){
+        justify-content: center;
+        margin-top: 60px;
+    }
+    .bottom-title{
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 0;
+        @include breakpoint(sm){
+            text-align: center;
+        }
+    }
+    .award-contact-list{
+        @include flex-vertical-center;
+        list-style: none;
+        @include breakpoint(sm){
+            flex-wrap: wrap;
+            row-gap: 10px;
+            justify-content: center;
+        }
+        li{
+            color: var(--ag-color-text-body);
+            font-size: 14px;
+            font-weight: 400;
+            @include flex-vertical-center;
+            column-gap: 5px;
+            line-height: 1;
+            @include breakpoint(sm){
+                flex-wrap: wrap;
+                row-gap: 10px;
+            }
+            i{
+                color: var(--ag-color-theme-primary);
+            }
+            a{
+                color: var(--ag-color-heading-primary);
+                text-decoration: underline;
+                font-weight: 500;
+            }
+            &:not(:last-of-type){
+                margin-right: 30px;
+                padding-right: 30px;
+                border-right: 1px solid var(--ag-color-border-1);
+                @include breakpoint(sm){
+                    padding-right: 0;
+                    margin-right: 0;
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
+/* !END: Page Header CSS */

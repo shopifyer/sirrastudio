@@ -1,0 +1,248 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Page Header CSS
+----------------------------------------*/
+
+
+.team-item{
+    position: relative;
+    z-index: 1;
+    &:not(:last-of-type){
+        padding-bottom: 50px;
+        border-bottom: 1px solid #DEDEDE;
+        margin-bottom: 60px;
+    }
+    .team-item-inner{
+        @include flex-vertical-center;
+        justify-content: space-between;
+        column-gap: 30px;
+        flex-wrap: wrap;
+        row-gap: 30px;
+        .left-content{
+            span{
+                font-family: var(--ag-ff-heading);
+                font-size: 16px;
+                font-weight: 500;
+                color: #999999;
+                text-transform: uppercase;
+                @include transition(all 0.3s ease-in-out);
+            }
+            .title-box{
+                position: relative;
+                .title{
+                    display: block;
+                    width: 100%;
+                    font-size: 80px;
+                    font-weight: 500;
+                    margin-bottom: 0;
+                    line-height: 1;
+                    margin-top: 10px;
+                    position: relative;
+                    -webkit-text-fill-color: transparent;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: var(--ag-color-text-body);
+                    opacity: 0.5;
+                    @include transition(all 0.3s ease-in-out);
+                    a{
+                        color: var(--ag-color-heading-primary);
+                    }
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        height: 100%;
+                        width: 103%;
+                        top: 0;
+                        left: 0;
+                        background: linear-gradient(100deg, rgba(154, 154, 154, 0) 0%, #fff 100%);
+                        opacity: 1;
+                        -webkit-transition: all 500mslinear 0ms;
+                        -khtml-transition: all 500ms linear 0ms;
+                        -moz-transition: all 500ms linear 0ms;
+                        -ms-transition: all 500ms linear 0ms;
+                        -o-transition: all 500ms linear 0ms;
+                        transition: all 500mslinear 0ms;
+                    }
+                }
+                .hover-title{
+                    display: block;
+                    width: 100%;
+                    font-size: 80px;
+                    font-weight: 500;
+                    margin-bottom: 0;
+                    line-height: 1;
+                    margin-top: 10px;
+                    position: absolute;
+                    top: -10px;
+                    left: 0;
+                    @include transition(all 0.3s ease-in-out);
+                    visibility: hidden;
+                    opacity: 0;
+                    a{
+                        color: var(--ag-color-heading-primary);
+                    }
+                }
+            }
+        }
+    }
+    &:hover{
+        .left-content{
+            span{
+                color: var(--ag-color-theme-primary);
+                text-decoration: underline;
+            }
+            .title-box{
+                .title{
+                    visibility: hidden;
+                    opacity: 0;
+                    &:before{
+                        display: none;
+                    }
+                }
+                .hover-title{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .team-img-reveal-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400px;
+        height: 500px;
+        opacity: 0;
+        margin: -100px 0 0 -100px;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 99;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        -webkit-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        -moz-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        -ms-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        -o-transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+        transition: opacity 0.3s, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    &:hover{
+        .team-img-reveal-bg{
+            opacity: 1;
+        }
+    }
+}
+
+.team-bottom-btn{
+    @include flex-center;
+    margin-top: 100px;
+    a{
+        font-size: 16px;
+        color: var(--ag-color-heading-primary);
+        font-weight: 600;
+        @include flex-center;
+        height: 200px;
+        width: 200px;
+        border: 1px solid var(--ag-color-theme-primary);
+        border-radius: 50%;
+        &:hover{
+            background-color: var(--ag-color-theme-primary);
+            color: var(--ag-color-common-white);
+        }
+    }
+}
+
+// Team 2
+
+.team-wrap-2{
+    &>div{
+        padding: 1.5px;
+    }
+}
+
+.team-item-2{
+    position: relative;
+    overflow: hidden;
+    .team-thumb{
+        width: 100%;
+        height: 320px;
+        position: relative;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: top;
+            filter: saturate(0);
+        }
+        .overlay{
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            visibility: hidden;
+            opacity: 0;
+            @include transition (all 0.3s ease-in-out);
+        }
+    }
+    .team-content{
+        position: absolute;
+        bottom: 20px;
+        left: 30px;
+        z-index: 5;
+        visibility: hidden;
+        opacity: 0;
+        @include transition (all 0.3s ease-in-out);
+        span{
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .title{
+            font-size: 24px;
+            font-weight: 500;
+            color: var(--ag-color-common-white);
+            margin-bottom: 0;
+        }
+    }
+    &:hover{
+        .team-thumb{
+            .overlay{
+                visibility: visible;
+                opacity: 0.8;   
+            }
+        }
+        .team-content{
+            bottom: 30px;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+
+.team-view-btn{
+    @include flex-center;
+    height: 320px;
+    a{
+        color: var(--ag-color-heading-primary);
+        height: 200px;
+        width: 200px;
+        border: 1px solid var(--ag-color-theme-primary);
+        border-radius: 50%;
+        @include flex-center;
+        text-align: center;
+        font-weight: 500;
+        &:hover{
+            background-color: var(--ag-color-theme-primary);
+            color: var(--ag-color-common-white);
+        }
+    }
+}
+
+
+/* !END: Page Header CSS */

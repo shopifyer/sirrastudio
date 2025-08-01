@@ -1,0 +1,270 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Page Header CSS
+----------------------------------------*/
+
+.faq-section{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    .shape{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        @include breakpoint(lg){
+            right: -20%;
+        }
+        @include breakpoint(sm){
+            display: none;
+        }
+    }
+}
+
+.faq-content{
+    position: relative;
+    z-index: 1;
+    .faq-accordion{
+        max-width: 530px;
+        width: 100%;
+        .accordion-item{
+            background-color: transparent;
+            border: none;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #DEDEDE;
+            border-radius: 0;
+            .accordion-button{
+                padding: 0;
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                border-bottom: 1px solid transparent;
+                font-size: 24px;
+                font-weight: 500;
+                color: var(--ag-color-heading-primary);
+                @include transition (all 0.3s ease-in-out);
+                padding-left: 30px;
+                @include breakpoint(sm){
+                    font-size: 20px;
+                }
+                &:after{
+                    background-image: none;
+                    font-family: "Font Awesome 6 Pro";
+                    font-size: 18px;
+                    content: "\2b";
+                    position: absolute;
+                    left: 0;
+                }
+                &:not(.collapsed){
+                    border-bottom: 1px solid var(--ag-color-theme-primary);
+                    padding-bottom: 20px;
+                    &:after{
+                        content: "\f068";
+                        transform: rotate(0);
+                    }
+                }
+                span{
+                    color: var(--ag-color-text-body);
+                    margin-right: 10px;
+                }
+            }
+            .accordion-body{
+                padding-left: 0;
+                padding-right: 0;
+                padding-bottom: 0;
+                padding-top: 25px;
+                p{
+                    font-size: 18px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+
+.faq-text{
+    h4{
+        font-family: var(--ag-ff-heading);
+        color: var(--ag-color-heading-primary);
+        font-size: 200px;
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: -8px;
+        @include breakpoint(xl){
+            font-size: 160px;
+        }
+        @include breakpoint(lg){
+            font-size: 130px;
+        }
+        @include breakpoint(sm){
+            font-size: 70px;
+            letter-spacing: 0;
+        }
+        span{
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+// Faq 2
+
+.faq-2{
+    .shape{
+        right: auto;
+        left: 0;
+        @include breakpoint(lg){
+            display: none;
+        }
+    }
+}
+
+.faq-img{
+    max-width: 630px;
+    width: 100%;
+    height: 656px;
+    @include breakpoint(md){
+        height: 500px;
+    }
+    @include breakpoint(sm){
+        height: 350px;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0);
+    }
+}
+
+.faq-content-2{
+    padding-left: 110px;
+    @include breakpoint(lg){
+        padding-left: 20px;
+    }
+    @include breakpoint(md){
+        padding-left: 0px;
+        margin-top: 40px;
+    }
+    .section-heading{
+        .section-title{
+            letter-spacing: -4px;
+            @include breakpoint(md){
+                letter-spacing: 0;
+            }
+        }
+    }
+}
+
+// About FAQ
+
+.faq-img-wrap-3{
+    position: relative;
+    max-width: 650px;
+    width: 100%;
+    height: 700px;
+    .faq-img-1{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 400px;
+        max-width: 400px;
+        width: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            filter: saturate(0);
+        }
+    }
+    .faq-img-2{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 440px;
+        max-width: 450px;
+        width: 100%;
+        box-shadow: 0px -30px 60px rgba(0, 0, 0, 0.1);
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            filter: saturate(0);
+        }
+        .faq-counter{
+            background-color: var(--ag-color-common-white);
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 20px;
+            .title{
+                font-size: 40px;
+                font-weight: 500;
+                line-height: 1;
+                @include flex-vertical-center;
+                margin-bottom: 5px;
+                .odometer-auto-theme{
+                    line-height: 1;
+                    font-family: inherit;
+                }
+                .icon{
+                    color: var(--ag-color-theme-primary);
+                }
+            }
+            p{
+                font-size: 12px;
+                font-weight: 500;
+                text-transform: uppercase;
+                margin-bottom: 0;
+                line-height: 1.6;
+            }
+        }
+    }
+    .faq-video{
+        position: absolute;
+        top: 85px;
+        right: 80px;
+        z-index: 5;
+        a{
+            color: var(--ag-color-heading-primary);
+            @include flex-vertical-center;
+            font-size: 16px;
+            font-weight: 600;
+            i{
+                background-color: var(--ag-color-theme-primary);
+                color: var(--ag-color-common-white);
+                font-size: 20px;
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+// Faq Inner
+
+.faq-left-content{
+    .faq-accordion,
+    .faq-content{
+        width: 100%;
+        max-width: 100%;
+    }
+    .faq-title{
+        .title{
+            font-size: 36px;
+            font-weight: 500;
+        }
+    }
+}
+
+
+/* !END: Page Header CSS */

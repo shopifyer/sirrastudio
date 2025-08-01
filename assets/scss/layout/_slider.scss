@@ -1,0 +1,669 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+START: Theme Slider CSS
+----------------------------------------*/
+
+
+.testi-slider-wrap{
+    position: relative;
+    .agenzio-swiper-pagination{
+        width: auto;
+        position: absolute;
+        left: auto;
+        bottom: auto;
+        top: 50%;
+        right: -55px;
+        transform: translateY(-50%);
+        z-index: 5;
+        @include flex-vertical-center;
+        flex-direction: column;
+        row-gap: 20px;
+        @include breakpoint(lg){
+            right: 20px;
+        }
+        @include breakpoint(md){
+            display: none;
+        }
+        .swiper-pagination-bullet{
+            background: transparent;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            opacity: 1;
+            position: relative;
+            &:before{
+                content: url(../img/icon/testi-pagination.png);
+                height: 15px;
+                width: 15px;
+                position: absolute;
+                top: -9px;
+                left: -1px;
+                @include transition(all 0.3s ease-in-out);
+                visibility: hidden;
+                opacity: 0;
+            }
+            &:after{
+                background-color: var(--ag-color-theme-primary);
+                content: '';
+                position: absolute;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                top: 50%;
+                left: 56%;
+                transform: translate(-50%, -50%);
+                @include transition(all 0.3s ease-in-out);
+                visibility: hidden;
+                opacity: 0;
+            }
+            &.swiper-pagination-bullet-active{
+                &:after,
+                &:before{
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+// Testi 2
+
+.testi-item-2{
+    position: relative;
+    z-index: 1;
+    .testi-text{
+        @include flex-vertical-center;
+        column-gap: 10px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+        row-gap: 15px;
+        .sub-text{
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 0;
+            span{
+                color: var(--ag-color-common-white);
+            }
+        }
+    }
+    p{
+        max-width: 650px;
+        width: 100%;
+        color: var(--ag-color-common-white);
+        margin-bottom: 40px;
+        font-size: 22px;
+        line-height: 1.5;
+    }
+    .testi-author{
+        display: grid;
+        align-items: center;
+        grid-template-columns: 80px 1fr;
+        grid-gap: 20px;
+        margin-top: 20px;
+        .author-img{
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: saturate(0);
+            }
+        }
+        .content{
+            .name{
+                color: var(--ag-color-common-white);
+                font-size: 24px;
+                font-weight: 500;
+            }
+            span{
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 18px;
+                font-weight: 400;
+            }
+        }
+    }
+    .testi-img-wrap{
+        max-width: 850px;
+        width: 100%;
+        height: 750px;
+        position: absolute; 
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        @include breakpoint(md){
+            display: none;
+        }
+        .overlay{
+            background: linear-gradient(90deg, #232323 0%, rgba(0, 0, 0, 0) 100%);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .testi-img{
+            width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: saturate(0);
+            }
+        }
+        .testi-video{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            @include breakpoint(lg){
+                left: 80%;
+            }
+            a{
+                background-color: var(--ag-color-common-white);
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                font-size: 14px;
+                color: var(--ag-color-heading-primary);
+                @include flex-center;
+            }
+        }
+    }
+}
+
+/* Text Animation */
+.agenzio-animation,
+.agenzio-animation span {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+}
+
+.agenzio-animation span {
+    display: inline-block;
+}
+
+/* Fade Effect */
+.agenzio-fadeIn {
+    animation-name: asFadeIn;
+}
+
+@keyframes asFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.agenzio-fadeInLeft {
+    animation-name: asFadeInLeft;
+}
+
+@keyframes asFadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.agenzio-fadeInRight {
+    animation-name: asFadeInRight;
+}
+
+@keyframes asFadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.agenzio-fadeInDown {
+    animation-name: asFadeInTop;
+}
+
+@keyframes asFadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.agenzio-fadeInUp {
+    animation-name: asFadeInBottom;
+}
+
+@keyframes asFadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Move From Effect */
+.agenzio-moveFromLeft {
+    animation-name: asMoveFromLeft;
+}
+
+@keyframes asMoveFromLeft {
+    from {
+        visibility: hidden;
+        transform: translateX(-50px);
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
+.agenzio-moveFromRight {
+    animation-name: asMoveFromRight;
+}
+
+@keyframes asMoveFromRight {
+    from {
+        visibility: hidden;
+        transform: translateX(50px);
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
+.agenzio-moveFromTop {
+    animation-name: asMoveFromTop;
+}
+
+@keyframes asMoveFromTop {
+    from {
+        visibility: hidden;
+        transform: translateY(-50px);
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
+.agenzio-moveFromBottom {
+    animation-name: asMoveFromBottom;
+}
+
+@keyframes asMoveFromBottom {
+    from {
+        visibility: hidden;
+        transform: translateY(50px);
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
+/* Blur Effect */
+
+.agenzio-blurIn {
+    animation-name: asBlurIn;
+}
+
+@keyframes asBlurIn {
+    from {
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.agenzio-blurInLeft {
+    animation-name: asBlurInLeft;
+}
+
+@keyframes asBlurInLeft {
+    from {
+        transform: translateX(50px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.agenzio-blurInRight {
+    animation-name: asBlurInRight;
+}
+
+@keyframes asBlurInRight {
+    from {
+        transform: translateX(-50px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.agenzio-blurInTop {
+    animation-name: asBlurInTop;
+}
+
+@keyframes asBlurInTop {
+    from {
+        transform: translateY(50px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+.agenzio-blurInBottom {
+    animation-name: asBlurInBottom;
+}
+
+@keyframes asBlurInBottom {
+    from {
+        transform: translateY(-50px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+
+/* Zoom Effect */
+.agenzio-zoomIn {
+    animation-name: asZoomIn;
+}
+
+@keyframes asZoomIn {
+    from {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+.agenzio-zoomInLeft {
+    animation-name: asZoomInLeft;
+}
+
+@keyframes asZoomInLeft {
+    from {
+        transform: scale(5) translateX(-50%);
+        opacity: 0;
+    }
+}
+
+.agenzio-zoomInRight {
+    animation-name: asZoomInRight;
+}
+
+@keyframes asZoomInRight {
+    from {
+        transform: scale(5) translateX(50%);
+        opacity: 0;
+    }
+}
+
+.agenzio-zoomInTop {
+    animation-name: asZoomInTop;
+}
+
+@keyframes asZoomInTop {
+    from {
+        transform: scale(10) translateY(-50%);
+        opacity: 0;
+    }
+}
+
+.agenzio-zoomInBottom {
+    animation-name: asZoomInBottom;
+}
+
+@keyframes asZoomInBottom {
+    from {
+        transform: scale(10) translateY(50%);
+        opacity: 0;
+    }
+}
+
+/* Flip Effect */
+.agenzio-flipInTop {
+    animation-name: asFlipInTop;
+}
+
+@keyframes asFlipInTop {
+    from {
+        transform: perspective(600px);
+        opacity: 0;
+    }
+
+    30% {
+        transform: perspective(600px) rotateX(180deg);
+        transform-origin: 0 0;
+        animation-timing-function: ease-out;
+    }
+
+    to {
+        transform: perspective(600px);
+    }
+}
+
+.agenzio-flipInBottom {
+    animation-name: asFlipInBottom;
+}
+
+@keyframes asFlipInBottom {
+    from {
+        transform: perspective(600px);
+        opacity: 0;
+    }
+
+    30% {
+        transform: perspective(600px) rotateX(180deg);
+        transform-origin: bottom;
+        animation-timing-function: ease-out;
+    }
+
+    to {
+        transform: perspective(600px);
+    }
+}
+
+/* Roll Effect */
+.agenzio-rollFromLeft {
+    animation-name: asRollFromLeft;
+}
+
+@keyframes asRollFromLeft {
+    from {
+        transform: translateX(-60px) perspective(600px) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+.agenzio-rollFromRight {
+    animation-name: asRollFromRight;
+}
+
+@keyframes asRollFromRight {
+    from {
+        transform: translateX(60px) perspective(600px) rotateY(-180deg);
+        opacity: 0;
+    }
+}
+
+.agenzio-rollFromTop {
+    animation-name: asRollFromTop;
+}
+
+@keyframes asRollFromTop {
+    from {
+        transform: translateY(-60px) perspective(600px) rotateX(180deg);
+        opacity: 0;
+    }
+}
+
+.agenzio-rollFromBottom {
+    animation-name: asRollFromBottom;
+}
+
+@keyframes asRollFromBottom {
+    from {
+        transform: translateY(60px) perspective(600px) rotateX(-180deg);
+        opacity: 0;
+    }
+}
+
+/* Rotate Skate Effect */
+.agenzio-rotateSkateInRight {
+    animation-name: asRotateSkateInRight;
+}
+
+@keyframes asRotateSkateInRight {
+    from {
+        transform: scaleX(0.2) translateX(100px);
+        opacity: 0;
+    }
+}
+
+.agenzio-rotateSkateInLeft {
+    animation-name: asRotateSkateInLeft;
+}
+
+@keyframes asRotateSkateInLeft {
+    from {
+        transform: scaleX(0.2) translateX(-100px);
+        opacity: 0;
+    }
+}
+
+.agenzio-rotateSkateInTop {
+    animation-name: asRotateSkateInTop;
+}
+
+@keyframes asRotateSkateInTop {
+    from {
+        transform: scaleY(0.2) translateY(-100px);
+        opacity: 0;
+    }
+}
+
+.agenzio-rotateSkateInBottom {
+    animation-name: asRotateSkateInBottom;
+}
+
+@keyframes asRotateSkateInBottom {
+    from {
+        transform: scaleY(0.2) translateY(100px);
+        opacity: 0;
+    }
+}
+
+/* PopUp Effect */
+.agenzio-popUp {
+    animation-name: asPopUp;
+}
+
+@keyframes asPopUp {
+    0% {
+        visibility: hidden;
+    }
+
+    50% {
+        transform: scale(1.1);
+        visibility: visible;
+    }
+}
+
+.agenzio-popUpLeft {
+    animation-name: asPopUpLeft;
+}
+
+@keyframes asPopUpLeft {
+    0% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: visible;
+        transform: translateX(-20px) scale(1.1);
+        animation-timing-function: ease-in;
+    }
+}
+
+.agenzio-popUpRight {
+    animation-name: asPopUpRight;
+}
+
+@keyframes asPopUpRight {
+    0% {
+        visibility: hidden;
+    }
+
+    50% {
+        visibility: visible;
+        transform: translateX(20px) scale(1.1);
+        animation-timing-function: ease-in;
+    }
+}
+
+/* Kenburns Top */
+
+.swiper-slide-active .kenburns-top {
+	-webkit-animation-name: kenburns-top;
+	animation-name: kenburns-top;
+}
+
+@-webkit-keyframes kenburns-top {
+	0% {
+		-webkit-transform: scale(1) translateY(0);
+		transform: scale(1) translateY(0);
+		-webkit-transform-origin: 50% 16%;
+		transform-origin: 50% 16%;
+	}
+
+	100% {
+		-webkit-transform: scale(1.08) translateY(-15px);
+		transform: scale(1.08) translateY(-15px);
+		-webkit-transform-origin: top;
+		transform-origin: top;
+	}
+}
+
+@keyframes kenburns-top {
+	0% {
+		-webkit-transform: scale(1) translateY(0);
+		transform: scale(1) translateY(0);
+		-webkit-transform-origin: 50% 16%;
+		transform-origin: 50% 16%;
+	}
+
+	100% {
+		-webkit-transform: scale(1.08) translateY(-15px);
+		transform: scale(1.08) translateY(-15px);
+		-webkit-transform-origin: top;
+		transform-origin: top;
+	}
+}
+
+
+
+/* !END: Theme Slider CSS */

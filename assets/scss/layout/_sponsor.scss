@@ -1,0 +1,118 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Page Header CSS
+----------------------------------------*/
+
+.sponsor-section{
+    position: relative;
+    z-index: 1;
+    .bg-shape{
+        @include background;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        opacity: 0.2;
+    }
+}
+
+.sponsor-wrap{
+    @include flex-vertical-center;
+    justify-content: space-between;
+    column-gap: 20px;
+    @include breakpoint(sm){
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    &:not(:last-of-type){
+        margin-bottom: 80px;
+        @include breakpoint(sm){
+            margin-bottom: 20px;
+        }
+    }
+    .section-heading{
+        margin-bottom: 0;
+        @include breakpoint(sm){
+            margin: 30px 0;
+        }
+    }
+}
+
+.sponsor-item{
+    @include breakpoint(sm){
+        width: 100%;
+    }
+    a{
+        background-color: var(--ag-color-common-white);
+        width: 190px;
+        height: 100px;
+        @include flex-center;
+        border: 1px solid #EAEAEA;
+        img{
+            @include transition (all 0.3s ease-in-out);
+        }
+        @include breakpoint(xl){
+            width: 130px;
+            img{
+                max-width: 70%;
+            }
+        }
+        @include breakpoint(md){
+            width: 100px;
+            height: 70px;
+            img{
+                max-width: 70%;
+            }
+        }
+        @include breakpoint(sm){
+            width: 100%;
+            height: 100px;
+        }
+        &:hover{
+            img{
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+// sponsor 2
+
+.sponsor-wrap-2{
+    margin-bottom: 30px;
+    &:not(:last-of-type){
+        margin-bottom: 30px;
+    }
+    .sponsor-item{
+        @include transition(all 0.3s ease-in-out);
+        a{
+            background-color: var(--ag-color-common-white);
+            box-shadow: 0px 30px 120px rgba(0, 0, 0, 0.06);
+
+            &:hover{
+                box-shadow: 0px 60px 120px rgba(0, 0, 0, 0.2);
+                border: 1px solid var(--ag-color-common-white);
+            }
+        }
+    }
+}
+
+.about-sponsor{
+    background-color: var(--ag-color-grey-1);
+}
+
+.sponsor-bottom-img{
+    width: 100%;
+    height: 100%;
+    margin-top: 50px;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* !END: Page Header CSS */

@@ -1,0 +1,781 @@
+@use "../utilities" as *;
+
+/**----------------------------------------
+    START: Portfolio CSS
+----------------------------------------*/
+
+.project-top{
+    margin-top: -30px;
+    .project-text{
+        span{
+            font-family: var(--ag-ff-heading);
+            font-size: 190px;
+            font-weight: 500;
+            line-height: 1;
+            display: inline-block;
+            letter-spacing: -4px;
+            color: var(--ag-color-text-body);
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: var(--ag-color-text-body);
+            position: relative;
+            @include breakpoint(xl){
+                font-size: 150px;
+            }
+            @include breakpoint(lg){
+                font-size: 120px;
+            }
+            @include breakpoint(lg){
+                font-size: 90px;
+            }
+            @include breakpoint(sm){
+                font-size: 50px;
+            }
+            &:before{
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(180deg, transparent 0%, #fff 70%);
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+}
+
+.project-item-wrap{
+    &>div{
+        padding: 0;
+        @include breakpoint(sm){
+            padding: 0 15px;
+            &:not(:last-of-type){
+                margin-bottom: 24px;
+            }
+        }
+        &:nth-child(2){
+            .project-item{
+                border-left: none;
+                @include breakpoint(sm){
+                    border-left: 1px solid var(--ag-color-border-1);
+                }
+            }
+        }
+        &:nth-child(3){
+            .project-item{
+                border-top: none;
+                @include breakpoint(sm){
+                    border-top: 1px solid var(--ag-color-border-1);
+                }
+            }
+        }
+        &:nth-child(4){
+            .project-item{
+                border-left: none;
+                border-top: none;
+                @include breakpoint(sm){
+                    border-left: 1px solid var(--ag-color-border-1);
+                    border-top: 1px solid var(--ag-color-border-1);
+                }
+            }
+        }
+    }
+}
+
+.project-item{
+    border: 1px solid var(--ag-color-border-1);
+    padding: 20px;
+    .project-item-top{
+        @include flex-vertical-center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        .category{
+            font-family: var(--ag-ff-heading);
+            color: var(--ag-color-theme-primary);
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            display: inline-block;
+            line-height: 1;
+        }
+        .arrow{
+            a{
+                display: inline-block;
+                color: var(--ag-color-heading-primary);
+                transform: rotate(-45deg);
+                font-size: 20px;
+                line-height: 1;
+                &:hover{
+                    transform: rotate(0);
+                }
+            }
+        }
+    }
+    .project-thumb{
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+        @include breakpoint(sm){
+            height: 300px;
+        }
+        &:after{
+            background: rgba(255, 255, 255, 0.3);
+            bottom: 0;
+            content: "";
+            left: 50%;
+            position: absolute;
+            right: 51%;
+            top: 0;
+            opacity: 1;
+            pointer-events: none;
+            -webkit-transition: all 500ms ease;
+            transition: all 500ms ease;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;    
+            transform: scale3d(1, 1, 1);
+            transition: transform 1s ease-in-out;
+        }
+    }
+    .project-content{
+        padding-top: 30px;
+        .title{
+            font-size: 80px;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 10px;
+            @include flex-vertical-center;
+            @include breakpoint(lg){
+                font-size: 60px;
+            }
+            @include breakpoint(md){
+                font-size: 40px;
+            }
+            @include breakpoint(sm){
+                font-size: 30px;
+            }
+            span{
+                color: var(--ag-color-text-body);
+                font-size: 16px;
+                font-weight: 400;
+            }
+        }
+        p{
+            @include breakpoint(lg){
+                br{
+                    display: none;
+                }
+            }
+        }
+    }
+    &:hover{
+        .project-thumb{
+            &:after{
+                left: 0;
+                right: 0;
+                opacity: 0;
+            }
+            img{
+                transform: scale(1.04) rotate(0deg);
+            }
+        }
+    }
+}
+
+// Project 3
+
+.project-section-3{
+    background-color: var(--ag-color-heading-primary);
+}
+
+.project-wrapper{
+    position: relative;
+    z-index: 1;
+    
+    @include breakpoint(sm){
+        padding: 40px 0;
+    }
+    .project-img{
+        position: absolute;
+        top: 0;
+        right: 0;
+        max-width: 850px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        @include breakpoint(lg){
+            max-width: 600px;
+        }
+        @include breakpoint(md){
+            max-width: 450px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .project-list{
+        list-style: none;
+        .project-list-item{
+            &:not(:last-of-type){
+                margin-bottom: 70px;
+                @include breakpoint(sm){
+                    margin-bottom: 30px;
+                }
+            }
+            .title{
+                color: var(--ag-color-common-white);
+                -webkit-text-fill-color: transparent;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: var(--ag-color-common-white);
+                line-height: 1;
+                font-size: 80px;
+                font-weight: 500;
+                margin-bottom: 0;
+                @include transition(all 0.3s ease-in-out);
+                @include breakpoint(md){
+                    font-size: 60px;
+                }
+                @include breakpoint(sm){
+                    font-size: 26px;
+                }
+                a{
+                    color: var(--ag-color-common-white);
+                }
+                &:hover{
+                    -webkit-text-fill-color: inherit;
+                    -webkit-text-stroke-width: 1px;
+                    -webkit-text-stroke-color: var(--ag-color-common-white);
+                }
+            }
+        }
+    }
+}
+
+
+.project-section-4{
+    background-color: var(--ag-color-grey-1);
+}
+
+.project-accordion{
+    .accordion-item{
+        background-color: transparent;
+        border: none;
+        padding: none;
+        border-bottom: 1px solid #DEDEDE;
+        padding-bottom: 50px;
+        &:not(:last-of-type){
+            margin-bottom: 50px;
+        }
+        .accordion-button{
+            background-color: transparent;
+            padding: 0;
+            border: none;
+            box-shadow: none;
+            .project-right{
+                .category{
+                    color: var(--ag-color-theme-primary);
+                    display: block;
+                    font-size: 16px;
+                    font-weight: 500;
+                    margin-bottom: 20px;
+                }
+                .title{
+                    font-family: var(--ag-ff-heading);
+                    font-size: 48px;
+                    font-weight: 500;
+                    margin-bottom: 0;
+                    line-height: 1;
+                    @include breakpoint(sm){
+                        font-size: 24px;
+                    }
+                }
+            }
+            &:after{
+                color: var(--ag-color-heading-primary);
+                height: 50px;
+                width: 50px;
+                background-image: none;
+                font-family: "Font Awesome 6 Pro";
+                font-size: 14px;
+                content: "+";
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                border: 1px solid #DEDEDE;
+            }
+            &:not(.collapsed){
+                &:after{
+                    content: "\f068";
+                    transform: rotate(0);
+                    border-color: var(--ag-color-theme-primary);
+                }
+            }
+        }
+        .accordion-body{
+            padding: 0;
+            padding-top: 50px;
+            .hover-content{
+                @include flex-vertical-center;
+                align-items: end;
+                column-gap: 80px;
+                @include breakpoint(lg){
+                    column-gap: 40px;
+                }
+                @include breakpoint(sm){
+                    flex-wrap: wrap;
+                    row-gap: 30px;
+                }
+                .content-left{
+                    max-width: 600px;
+                    width: 100%;
+                    height: 450px;
+                    @include breakpoint(lg){
+                        max-width: 450px;
+                    }
+                    @include breakpoint(sm){
+                        height: 350px;
+                    }
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .content-right{
+                    .project-list{
+                        list-style: none;
+                        @include flex-vertical-center;
+                        @include breakpoint(md){
+                            flex-direction: column;
+                            align-items: baseline;
+                            row-gap: 30px;
+                        }
+                        li{
+                            &:not(:last-of-type){
+                                margin-right: 40px;
+                                @include breakpoint(lg){
+                                    margin-right: 20px;
+                                }
+                            }
+                            span{
+                                font-family: var(--ag-ff-heading);
+                                color: #999999;
+                                font-size: 14px;
+                                font-weight: 400;
+                                text-transform: uppercase;
+                            }
+                            .title{
+                                font-size: 24px;
+                                font-weight: 500;
+                                margin-bottom: 0;
+                                @include breakpoint(lg){
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.project-bottom-btn{
+    margin-top: 60px;
+    @include flex-center;
+    a{
+        border: 1px solid var(--ag-color-heading-primary);
+    }
+}
+
+// Project Inner
+
+.project-accordion-2{
+    .accordion-item{
+        .accordion-body{
+            .hover-content{
+                .content-left{
+                    img{
+                        filter: saturate(0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Project Details 
+
+.project-details-top{
+    @include flex-vertical-center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    .project-list{
+        list-style: none;
+        @include flex-vertical-center;
+        @include breakpoint(md){
+            flex-direction: column;
+            align-items: baseline;
+            row-gap: 30px;
+        }
+        li{
+            &:not(:last-of-type){
+                margin-right: 40px;
+                @include breakpoint(lg){
+                    margin-right: 20px;
+                }
+            }
+            span{
+                font-family: var(--ag-ff-heading);
+                color: #999999;
+                font-size: 14px;
+                font-weight: 400;
+                text-transform: uppercase;
+            }
+            .title{
+                font-size: 32px;
+                font-weight: 500;
+                margin-bottom: 0;
+                @include breakpoint(lg){
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .project-details-btn{
+        .ag-primary-btn-2{
+            border: 1px solid var(--ag-color-heading-primary);
+        }
+    }
+}
+
+.project-details-content{
+    .project-details-img{
+        width: 100%;
+        height: 600px;
+        margin-bottom: 40px;
+        @include breakpoint(sm){
+            height: 350px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            filter: saturate(0);
+        }
+    }
+    .project-details-list{
+        list-style: none;
+        margin-bottom: 50px;
+        li{
+            &:not(:last-of-type){
+                margin-bottom: 25px;
+            }
+            span{
+                color: var(--ag-color-heading-primary);
+                font-weight: 500;
+            }
+        }
+    }
+    .project-details-items{
+        @include flex-vertical-center;
+        column-gap: 60px;
+        margin-bottom: 60px;
+        @include breakpoint(lg){
+            column-gap: 20px;
+        }
+        @include breakpoint(md){
+            flex-wrap: wrap;
+            row-gap: 40px;
+        }
+        img{
+            max-width: 500px;
+            width: 100%;
+            height: 462px;
+            filter: saturate(0);
+            object-fit: cover;
+        }
+        .project-info-list{
+            li{
+                font-size: 18px;
+                font-weight: 500;
+                color: var(--ag-color-heading-primary);
+                @include flex-vertical-center;
+                @include breakpoint(lg){
+                    font-size: 14px;
+                }
+                &:not(:last-of-type){
+                    margin-bottom: 20px;
+                }
+                i{
+                    color: var(--ag-color-heading-primary);
+                    margin-right: 15px;
+                    font-size: 14px;
+                    height: 30px;
+                    width: 30px;
+                    @include flex-center;
+                    border: 1px solid #DEDEDE;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    .project-details-thumbs{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 45px;
+        @include breakpoint(lg){
+            grid-gap: 24px;
+        }
+        @include breakpoint(md){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include breakpoint(sm){
+            grid-template-columns: 1fr;
+        }
+        .project-details-thumb{
+            max-width: 400px;
+            width: 100%;
+            height: 500px;
+            @include breakpoint(lg){
+                height: 400px;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: saturate(0);
+            }
+        }
+    }
+}
+
+
+// Project 4
+
+.project-section-4{
+    position: relative;
+    z-index: 1;
+    .bg-shape{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+}
+
+@include breakpoint(min-md){
+
+    .project-accordion-wrap{
+        width: 3000px;
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .project-accordian {
+        max-width: 1620px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .project-accordian .project-card-wrap {
+        max-width: 1620px;
+        width: 100%;
+        height: 100%;
+        @include flex-vertical-center;
+        @include breakpoint(sm){
+            flex-direction: column;
+        }
+    }
+    .project-accordian .project-card {
+        position: relative;
+        display: block;
+        width: 200px;
+        height: 100%;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        @include breakpoint(xl){
+            width: 150px;
+        }
+        @include breakpoint(lg){
+            width: 130px;
+        }
+        @include breakpoint(md){
+            width: 95px;
+        }
+        .project-img{
+            height: 100%;
+            width: 100%;
+            display: block;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .project-accordian .project-card-wrap .project-card.active {
+        width: 816px;
+        @include breakpoint(xxxl){
+            width: 700px;
+        }
+        @include breakpoint(xxl){
+            width: 550px;
+        }
+        @include breakpoint(lg){
+            width: 450px;
+        }
+        @include breakpoint(lg){
+            width: 350px;
+        }
+    }
+}
+
+
+
+.project-accordian .project-card img {
+	display: block;
+}
+
+.project-card{
+    position: relative;
+    overflow: hidden;
+    .project-img{
+        position: relative;
+        @include breakpoint(sm){
+            height: 400px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .overlay{
+            background: linear-gradient(180deg, rgba(228, 79, 57, 0) 48%, #E44F39 100%);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            visibility: hidden;
+            opacity: 0;
+            @include transition (all 0.3s ease-in-out);
+        }
+    }
+    .number{
+        color: var(--ag-color-common-white);
+        font-size: 120px;
+        font-weight: 500;
+        color: var(--ag-color-common-white);
+        position: absolute;
+        bottom: 50px;
+        right: -20px;
+        z-index: 5;
+        writing-mode: sideways-lr;
+        line-height: 1;
+        visibility: hidden;
+        opacity: 0;
+        @include transition (all 0.3s ease-in-out);
+        @include breakpoint(lg){
+            font-size: 80px;
+            right: -15px;
+        }
+        @include breakpoint(md){
+            writing-mode: inherit;
+            right: 0;
+            bottom: 0;
+            font-size: 60px;
+        }
+    }
+    .number-2{
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgba(255, 255, 255, 0.3);
+        visibility: visible;
+        opacity: 1;
+        @include transition (all 0.3s ease-in-out);
+    }
+    .project-content{
+        position: absolute;
+        left: 50px;
+        bottom: 50px;
+        z-index: 5;
+        visibility: hidden;
+        opacity: 0;
+        @include transition (all 0.3s ease-in-out);
+        @include breakpoint(xxl){
+            left: 30px;
+        }
+        @include breakpoint(md){
+            left: 20px;
+        }
+        @include breakpoint(sm){
+            bottom: 70px;
+        }
+        .title{
+            color: var(--ag-color-common-white);
+            font-size: 40px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            @include breakpoint(lg){
+                font-size: 30px;
+            }
+            a{
+                color: var(--ag-color-common-white);
+            }
+        }
+        p{
+            color: var(--ag-color-common-white);
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 0;
+            @include breakpoint(lg){
+                font-size: 16px;
+            }
+            @include breakpoint(md){
+                font-size: 14px;
+                br{
+                    display: none;
+                }
+            }
+        }
+    }
+    &.active{
+        .project-content{
+            visibility: visible;
+            opacity: 1;
+        }
+        .number-2{
+            visibility: hidden;
+            opacity: 1;
+        }
+        .number{
+            visibility: visible;
+            opacity: 1;
+        }
+        .project-img{
+            .overlay{
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/* !END: Portfolio CSS */
